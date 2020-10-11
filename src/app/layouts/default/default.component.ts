@@ -9,9 +9,10 @@ export class DefaultComponent implements OnInit {
   sideBarOpen = true;
   constructor() { }
 
+  // tslint:disable-next-line: typedef
   ngOnInit() {
   }
-  sideBarToggler() {
+  sideBarToggler(): void {
     this.sideBarOpen = !this.sideBarOpen;
 
   }

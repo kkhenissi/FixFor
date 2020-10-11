@@ -13,6 +13,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DashboardService } from 'src/app/modules/dashboard.service';
+import { ProductListComponent } from 'src/app/modules/products/productList.component';
+import { LoginComponent } from 'src/app/defaultModule/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { RegisterComponent } from 'src/app/defaultModule/register/register.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   imports: [
@@ -25,16 +30,21 @@ import { DashboardService } from 'src/app/modules/dashboard.service';
     MatCardModule,
     MatPaginatorModule,
     MatTableModule,
-
+    MatButtonModule,
+    FormsModule
 
   ],
   exports: [
-    MatSidenavModule
+    MatSidenavModule,
+    MatButtonModule
   ],
   declarations: [
     DefaultComponent,
     DashboardComponent,
     PostsComponent,
+    ProductListComponent,
+    LoginComponent,
+    RegisterComponent
 
   ],
   providers: [

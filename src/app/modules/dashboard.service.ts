@@ -28,16 +28,16 @@ export class DashboardService {
   }
 
   cards1(): any[] {
-    return [15, 87, 56, 95]
+    return [15, 87, 56, 95];
   }
   cards2(): any[] {
-    return [75, 17, 36, 25]
+    return [75, 17, 36, 25];
   }
   cards3(): any[] {
-    return [25, 37, 16, 15]
+    return [25, 37, 16, 15];
   }
   cards4(): any[] {
-    return [51, 777, 86, 15]
+    return [51, 777, 86, 15];
   }
 
   pie(): any[] {
@@ -70,6 +70,6 @@ export class DashboardService {
   }, {
       name: 'Other',
       y: 2.61
-  }]
+  }];
   }
 }

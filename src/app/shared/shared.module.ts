@@ -16,6 +16,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { MatCardModule } from '@angular/material/card';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 
 
@@ -27,10 +28,12 @@ import { PieComponent } from './widgets/pie/pie.component';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent
+    PieComponent,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
+    RouterModule,
     MatDividerModule,
     MatToolbarModule,
     MatIconModule,
@@ -38,7 +41,6 @@ import { PieComponent } from './widgets/pie/pie.component';
     FlexLayoutModule,
     MatMenuModule,
     MatListModule,
-    RouterModule,
     HighchartsChartModule,
     MatCardModule
   ],
@@ -48,7 +50,8 @@ import { PieComponent } from './widgets/pie/pie.component';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent
+    PieComponent,
+    NotFoundComponent
     
   ]
 })

@@ -8,8 +8,9 @@
         <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"> favorite</mat-icon>
         <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon"> delete</mat-icon> -->
         <span> FIX FOR </span>
+        <mat-nav-list>
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
-            <ul fxLayout="row" fxLayoutGrap="20px">
+            <ul fxLayout="row">
                 <li>
                     <button mat-icon-button>
                         <mat-icon>settings </mat-icon>
@@ -25,18 +26,15 @@
                         <mat-icon>person_outline </mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>
-                            <mat-icon>exit_to_app</mat-icon>
-                            Profile </button>
-                        <button mat-menu-item>
-                            <mat-icon>exit_to_app</mat-icon>
-                            count </button>
-                        <button mat-menu-item>
-                            <mat-icon>exit_to_app</mat-icon>
-                            Sign out </button>
+  
+                        <button mat-menu-item routerLinkActive="list-item-active" routerLink='/login' > Log In </button>
+                        <button mat-menu-item  routerLinkActive="list-item-active" routerLink='/register' > Register </button>
+                        <button mat-menu-item  routerLinkActive="list-item-active" routerLink='/login' > Sign out </button>
+                        
                     </mat-menu>
                 </li>
             </ul>
         </div>
+    </mat-nav-list>
     </mat-toolbar-row> 
 </mat-toolbar>

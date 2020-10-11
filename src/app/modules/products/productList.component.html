@@ -1,0 +1,49 @@
+<!-- 
+
+
+<mat-card *ngFor="let prd of products">
+  <mat-card-title>
+    <h5 class="card-title">{{prd.designation}}</h5>
+  </mat-card-title>
+  <mat-card-content>
+    <div><img [src]="prd.imageUrl"></div>
+    <p class="card-text"> {{ prd.currentPrice }} €</p>
+    
+  </mat-card-content>
+  <mat-card-actions>
+    <a href="#" class="btn btn-primary">Buy me</a>
+  </mat-card-actions>
+ 
+  <mat-card-content>
+    {{prd.dateOfSale | date:'shortDate'}}
+  </mat-card-content>   
+</mat-card> -->
+<div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  <mat-card class="example-card"   *ngFor="let prd of products">
+    <mat-card-header style="text-align: center;">
+      <div mat-card-avatar class="example-header-image"><img mat-card-image [src]="prd.logoSaler"></div>
+      <mat-card-title class="title-card">{{prd.designation}}</mat-card-title>
+      <mat-card-subtitle class="currentprice">{{ prd.currentPrice }} €</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="prd.imageUrl">
+    <mat-card-content>
+      <p>
+        {{ prd.description }}
+      </p>
+    
+    
+    
+    
+      <mat-card-actions >
+        <button mat-flat-button style="margin-bottom: 0px;">By me</button>
+        <button mat-flat-button style="margin-bottom: 0px;">Details</button>
+      </mat-card-actions>
+    </mat-card-content>
+
+   
+
+
+    
+  </mat-card>
+
+</div>
