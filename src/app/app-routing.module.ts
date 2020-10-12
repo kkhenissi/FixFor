@@ -32,7 +32,13 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        component: ProductListComponent
+        component: ProductListComponent,
+        //     children: [
+        //       {
+        //         path: ':id',
+        //         component: ProductDetailsComponent
+        //       },
+        // ],
       },
       {
         path: 'login',
@@ -41,10 +47,6 @@ const routes: Routes = [
       {
         path: 'register',
         component: RegisterComponent
-      },
-      {
-        path: ':key',
-        component: ProductDetailsComponent
       },
       {
         path: '**',

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { PRODUCTS } from './mockProducts';
 import { Product } from './Product';
 
@@ -13,18 +14,18 @@ products: Observable<Product[]>;
 constructor(private http: HttpClient) { }
 
 getProducts(): Observable<Product[]> {
-      return this.http.get<Product[]>("http://localhost:5000/api/v1/product/");
+      return this.http.get<Product[]>(`${environment.baseUrl}/products/`);
 }
 
 getProduct(key: string): Observable<Product> {
-  return this.http.get<Product>("http://localhost:5000/api/v1/product/"+key);
+  return this.http.get<Product>(`${environment.baseUrl}/products/` + key);
 }
 
 saveProduct(product: Product): Observable<Product> {
-  return this.http.post<Product>("http://localhost:5000/api/v1/product/", product);
+  return this.http.post<Product>(`${environment.baseUrl}/products/`, product);
 }
 saveUser(user: any): Observable<Product> {
-  return this.http.post<Product>("http://localhost:5000/users/", user);
+  return this.http.post<Product>(`${environment.baseUrl}/userss/`, user);
 }
 
 }

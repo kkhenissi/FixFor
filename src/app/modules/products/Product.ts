@@ -4,6 +4,9 @@ export class Product {
     description = '';
     imageUrl = '';
     logoSaler = '';
+    linkProduct = '';
+    ProductSold = false;
+    productLoked = false;
     initialPrice: number;
     currentPrice: number;
     key = '';

@@ -40,6 +40,11 @@ export class ProductListComponent implements OnInit {
          });
   }
 
+  redirectToSaler( ) {
+  //  this.router.("https://www.auchan.fr/jbl-casque-audio-bluetooth-noir-e500bt/p-c1113165")
+    // https://www.auchan.fr/jbl-casque-audio-bluetooth-noir-e500bt/p-c1113165
+  }
+
 
 
 }

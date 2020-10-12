@@ -10,6 +10,7 @@
 h3 {
     font-size: 32px;
 }
+ 
 img {
     max-height: 200px;
 }
@@ -20,8 +21,8 @@ img {
     color: grey;
 }
 .example-card {
-    max-width: 400px;
-    width: 225px;
+    max-width: 500px;
+    width: 280px;
     margin-bottom: 25px;
     margin-left: 25px;
   }
@@ -38,7 +39,21 @@ img {
   .currentprice{
       font-weight: bold;
       color: darkgreen;
-      font-size: 40px;
-      margin-left: 10px;
+      font-size: 30px;
+      margin-left: 40px;
       padding-top: 10px;
+  }
+  .btn-card {
+      width: 100%;
+  }
+  .blink_me {
+      text-align: center;
+      color: rgb(77, 72, 9);
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
   }
