@@ -18,6 +18,9 @@ import { LoginComponent } from 'src/app/defaultModule/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from 'src/app/defaultModule/register/register.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -30,13 +33,21 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatPaginatorModule,
     MatTableModule,
+    MatToolbarModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatButtonModule,
     FormsModule
 
   ],
   exports: [
     MatSidenavModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatCardModule,
+
   ],
   declarations: [
     DefaultComponent,
