@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from 'src/app/shared/shared.service';
-import { Product } from '../Product';
+import { Product } from '../../../models/ProductModel';
 import { ProductService } from '../product.service';
 
 @Component({

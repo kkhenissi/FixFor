@@ -2,6 +2,7 @@ export class Product {
     id: number;
     designation = '';
     description = '';
+    category = '';
     imageUrl = '';
     logoSaler = '';
     linkProduct = '';
@@ -11,7 +12,7 @@ export class Product {
     currentPrice: number;
     key = '';
     saledate: Date = new Date();
-    dateOfSale: Date = null;
+   // dateOfSale: Date = null;
 
 
 }

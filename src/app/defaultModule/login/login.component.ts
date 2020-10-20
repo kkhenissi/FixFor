@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
   loginUserData = {
     email: '',
     password: ''
-  }
+  };
+ // currentUser: User;
 
   constructor(private _auth: AuthService,
               private _router: Router) { }

@@ -1,9 +1,9 @@
-
+<app-searchCreteria></app-searchCreteria>
 <div fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
   <mat-card class="example-card"   *ngFor="let prd of products">
     <div>
       <!-- [disabled]="!isAdmin && (element.ownerId!==currentAccount.id)"-->
-  
+
       <mat-card-header style="text-align: center;">
         <div mat-card-avatar class="example-header-image"><img mat-card-image [src]="prd.logoSaler"></div>
         <mat-card-title class="title-card">{{prd.designation}}</mat-card-title>
@@ -18,24 +18,24 @@
           <!-- <button mat-flat-button style="margin-bottom: 0px;" (click)="datailsProduct()">Details</button> -->
           <!-- <a mat-list-item style="text-decoration: none;" routerLink="{{prd._id}}" class="continue-reading">more details</a> -->
         </p>
-      
-      
+
+
         <!--  -->
-      
+
         <mat-card-actions >
           <!-- <button mat-flat-button class="btn-card" (click)="redirectToSaler()">Buy me</button> -->
-         
-          <a  *ngIf="prd.productLoked == false" target="_blank" href={{prd.linkProduct}}> Buy me</a>
+
+          <!-- <a  *ngIf="prd.productLoked == false" target="_blank" href={{prd.linkProduct}}> Buy me</a> -->
           <h4 *ngIf="prd.productLoked == true" class="blink_me"> Locked  by one  ather user !!</h4>
-          <!-- <button mat-flat-button style="margin-bottom: 0px;" (click)="routerLink=`/{{prd.key}}`">Details</button> -->
+          <button *ngIf="prd.productLoked == false" mat-flat-button style="width: 100%; margin-bottom: 0px;" (click)="redirectToSaler(prd)">Buy</button>
         </mat-card-actions>
-      
+
       </mat-card-content>
 
-    
 
-    </div> 
-    
+
+    </div>
+     <app-lock-to-buy></app-lock-to-buy>
   </mat-card>
 
 </div>

@@ -1,0 +1,30 @@
+<div fxLayout="column">
+    <div fxLayoutGap="2%" fxFlex="auto" fxLayoutAlign="space-between center" fxLayout="row " class="main-toolbar-wrapper p-3">
+        
+    
+        <!-- <div fxFlex="10" class="branding p1-2">
+          <h3>B</h3>
+        </div> -->
+
+        <div fxFlex="70" fxLayoutAlign="space-around center" fxLayoutGap="2%" fxHide.xs #searchFields>
+          <mat-form-field *ngIf="searchFields.style.display !== 'none'" class="material-input-full-wdth">
+            <input type="text" placeholder="Select Location" aria-label="Number" matInput [formControl]="myControl">
+
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let opt of options" [value]="opt">
+               
+              </mat-option>
+
+            </mat-autocomplete>
+          
+          
+          </mat-form-field>
+
+          <mat-form-field *ngIf="searchFields.style.display !== 'none'" class="material-input-full-wdth">
+            <input type="text" placeholder="Search items" value="" matInput>
+          </mat-form-field>
+
+        </div>
+    </div>
+</div>
+ 

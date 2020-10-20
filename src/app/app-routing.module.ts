@@ -7,7 +7,7 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { PostsComponent } from './modules/posts/posts.component';
 import { ProductDetailsComponent } from './modules/products/productDetails/productDetails.component';
-import { ProductListComponent } from './modules/products/productList.component';
+import { ProductListComponent } from './modules/products/productList/productList.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [

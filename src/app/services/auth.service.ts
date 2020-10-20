@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Router } from '@angular/router'
+import { UserModel } from '../models/userModel';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-
+  currentUser: UserModel;
   private _registerUrl = "http://localhost:5000/api/v1/register";
   private _loginUrl = "http://localhost:5000/api/v1/auth";
 

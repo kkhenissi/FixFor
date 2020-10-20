@@ -1,26 +1,33 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DefaultComponent } from './default.component';
-import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
-import { RouterModule } from '@angular/router';
-import { PostsComponent } from 'src/app/modules/posts/posts.component';
-import { SharedModule } from 'src/app/shared/shared.module';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatCardModule } from '@angular/material/card';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { DashboardService } from 'src/app/modules/dashboard.service';
-import { ProductListComponent } from 'src/app/modules/products/productList.component';
-import { LoginComponent } from 'src/app/defaultModule/login/login.component';
-import { FormsModule } from '@angular/forms';
-import { RegisterComponent } from 'src/app/defaultModule/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
+import { LockToBuyComponent } from 'src/app/defaultModule/lock-to-buy/lock-to-buy.component';
+import { LoginComponent } from 'src/app/defaultModule/login/login.component';
+import { RegisterComponent } from 'src/app/defaultModule/register/register.component';
+import { DashboardService } from 'src/app/modules/dashboard.service';
+import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
+import { PostsComponent } from 'src/app/modules/posts/posts.component';
+import { AddProductComponent } from 'src/app/modules/products/addProduct/addProduct.component';
+import { ProductListComponent } from 'src/app/modules/products/productList/productList.component';
+import { SearchCreteriaComponent } from 'src/app/modules/searchCreteria/searchCreteria.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { DefaultComponent } from './default.component';
+
 
 @NgModule({
   imports: [
@@ -36,8 +43,13 @@ import {MatInputModule} from '@angular/material/input';
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
     MatButtonModule,
-    FormsModule
+    ReactiveFormsModule,
+    MatGridListModule,
+    MatAutocompleteModule,
+    FormsModule,
+    MatIconModule
 
   ],
   exports: [
@@ -46,7 +58,10 @@ import {MatInputModule} from '@angular/material/input';
     MatFormFieldModule,
     MatToolbarModule,
     MatInputModule,
+    MatCheckboxModule,
     MatCardModule,
+    MatGridListModule,
+    MatAutocompleteModule
 
   ],
   declarations: [
@@ -55,7 +70,10 @@ import {MatInputModule} from '@angular/material/input';
     PostsComponent,
     ProductListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AddProductComponent,
+    SearchCreteriaComponent,
+    LockToBuyComponent
 
   ],
   providers: [

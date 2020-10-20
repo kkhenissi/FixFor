@@ -1,28 +1,38 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { SharedService } from 'src/app/shared/shared.service';
-import { PRODUCTS } from './mockProducts';
-import { Product } from './Product';
-import { ProductService } from './product.service';
+import { PRODUCTS } from '../mockProducts';
+import { Product } from '../../../models/ProductModel';
+import { ProductService } from '../product.service';
+import { Subscription } from 'rxjs';
+import { MediaObserver } from '@angular/flex-layout';
+ 
 
 @Component({
   selector: 'app-product',
   templateUrl: './productList.component.html',
   styleUrls: ['./productList.component.scss']
 })
-export class ProductListComponent implements OnInit {
+export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
   products: Product[] = [];
+  private mediaSub: Subscription;
   constructor(
     private productService: ProductService,
     private titleService: Title,
     private sharedService: SharedService,
-    private router: Router ) { }
+    private router: Router,
+    private cdRef: ChangeDetectorRef,
+    private mediaObserver: MediaObserver ) { }
 
   ngOnInit(): void {
       this.getProducts();
   }
+   
+  ngAfterViewInit(): void {
+    this.cdRef.detectChanges();
+ }
 
   getProducts(): void {
      this.productService.getProducts()
@@ -40,9 +50,16 @@ export class ProductListComponent implements OnInit {
          });
   }
 
-  redirectToSaler( ) {
-  //  this.router.("https://www.auchan.fr/jbl-casque-audio-bluetooth-noir-e500bt/p-c1113165")
-    // https://www.auchan.fr/jbl-casque-audio-bluetooth-noir-e500bt/p-c1113165
+  redirectToSaler(prd) {
+  
+    window.location.href = prd.linkProduct + '?' + prd.linkProduct;
+   //  setInterval(function(){ alert("Votre code: XDSSHXRE"); }, 5000);
+ 
+  }
+  ngOnDestroy(): void {
+    if (this.mediaSub) {
+      this.mediaSub.unsubscribe();
+    }
   }
 
 

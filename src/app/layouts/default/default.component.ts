@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { MediaObserver } from '@angular/flex-layout';
+import { Subscription } from 'rxjs';
+import { Product } from 'src/app/models/ProductModel';
 
 @Component({
   selector: 'app-default',
@@ -7,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DefaultComponent implements OnInit {
   sideBarOpen = true;
-  constructor() { }
+
+
+  
+  constructor(
+
+  ) { }
+
+
 
   // tslint:disable-next-line: typedef
   ngOnInit() {
@@ -16,5 +26,7 @@ export class DefaultComponent implements OnInit {
     this.sideBarOpen = !this.sideBarOpen;
 
   }
+
+ 
 
 }
