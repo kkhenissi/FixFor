@@ -17,6 +17,7 @@ import { MatCardModule } from '@angular/material/card';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FixgameComponent } from './fixgame/fixgame.component';
 
 
 
@@ -29,7 +30,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     AreaComponent,
     CardComponent,
     PieComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FixgameComponent
   ],
   imports: [
     CommonModule,

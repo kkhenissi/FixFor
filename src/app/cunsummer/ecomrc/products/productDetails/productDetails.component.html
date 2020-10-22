@@ -1,0 +1,9 @@
+
+<div class="product">
+  <div class="product-image"><img [src]="product.imageUrl"></div>
+  <h1 class="title">{{product.designation}}</h1>
+</div>
+<div class="meta-info">
+  {{product.saledate.toString()}}
+</div>
+<p [innerHtml]="product.description"></p>
