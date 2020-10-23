@@ -18,7 +18,7 @@
                 </li>
                 <li>
                   <div right>
-                    <button aria-label="Cart" mat-icon-button>
+                    <button aria-label="Cart" mat-icon-button (click)="openCart()">
                       <mat-icon [matBadge]="cart.cartTotal" matBadgeColor="accent"  matBadgePosition="after">shopping_cart</mat-icon>
                     </button>
                   </div>

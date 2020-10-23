@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material/material.module';
+import { SharedModule } from '../shared/shared.module';
+import { CartComponent } from './cart/cart.component';
 import { CunsummerRoutingModule } from './cunsummer-routing.module';
 import { CunsummerComponent } from './cunsummer/cunsummer.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -19,11 +21,14 @@ import { LockToBuyComponentCuns } from './lock-to-buy/lock-to-buy.component';
                  DashboardComponent,
                  ProductListComponent,
                  FoodsProductListComponent,
-                 LockToBuyComponentCuns],
+                 LockToBuyComponentCuns,
+                 CartComponent],
   imports: [
     CommonModule,
     CunsummerRoutingModule,
+    SharedModule,
     MaterialModule
-  ]
+  ],
+
 })
 export class CunsummerModule { }
