@@ -1,23 +1,18 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
+import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
-import { AreaComponent } from './widgets/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
-import { MatCardModule } from '@angular/material/card';
+import { MaterialModule } from '../material/material.module';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { FixgameComponent } from './fixgame/fixgame.component';
+import { AreaComponent } from './widgets/area/area.component';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { FixgameComponent } from './fixgame/fixgame.component';
 
 
 
@@ -36,15 +31,19 @@ import { FixgameComponent } from './fixgame/fixgame.component';
   imports: [
     CommonModule,
     RouterModule,
-    MatDividerModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MatMenuModule,
-    MatListModule,
     HighchartsChartModule,
-    MatCardModule
+    FlexLayoutModule,
+    MatListModule,
+    MaterialModule,
+
+    // MatMenuModule,
+    // MatListModule,
+    // MatCardModule,
+    // MatDividerModule,
+    // MatToolbarModule,
+    // MatIconModule,
+    // MatBadgeModule,
+    // MatButtonModule,
   ],
   exports: [
     FooterComponent,
@@ -53,8 +52,9 @@ import { FixgameComponent } from './fixgame/fixgame.component';
     AreaComponent,
     CardComponent,
     PieComponent,
-    NotFoundComponent
-    
+    NotFoundComponent,
+
+
   ]
 })
 export class SharedModule { }

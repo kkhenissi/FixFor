@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Product } from '../../models/ProductModel';
+import { Product } from '../models/ProductModel';
+
 
 @Injectable({
   providedIn: 'root'

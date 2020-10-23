@@ -64,4 +64,26 @@ img {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin-top: 30px;}
+    margin-top: 30px;
+  }
+  .title-card {
+      font-weight: bold;
+      font-size: 30px;
+
+ }
+ .currentprice{
+  font-weight: bold;
+  color:lightslategrey;
+  font-size: 30px;
+  margin-left: 40px;
+  padding-top: 10px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fill {
+  flex: 1;
+}

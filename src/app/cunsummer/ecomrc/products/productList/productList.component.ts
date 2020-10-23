@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Product } from '../../../../models/ProductModel';
-import { ProductService } from '../../../services/product.service';
+import { ProductService } from '../../../../services/product.service';
 
 
 @Component({

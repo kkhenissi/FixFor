@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,11 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
-  constructor() { }
+  cart: any = {};
+  cart$: Observable<any>;
+  constructor(private cartService: CartService) {
+    this.cart$ = this.cartService.cart$.subscribe(cart => this.cart = cart);
+  }
 
   ngOnInit(): void {
   }

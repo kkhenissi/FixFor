@@ -17,24 +17,30 @@
                     </button>
                 </li>
                 <li>
-                    <button mat-icon-button>
-                        <mat-icon>help_outline </mat-icon>
+                  <div right>
+                    <button aria-label="Cart" mat-icon-button>
+                      <mat-icon [matBadge]="cart.cartTotal" matBadgeColor="accent"  matBadgePosition="before">shopping_cart</mat-icon>
                     </button>
+                  </div>
+
+                    <!-- <button mat-icon-button>
+                        <mat-icon>help_outline </mat-icon>
+                    </button> -->
                 </li>
                 <li>
-                    <button mat-icon-button [mat-menu-trigger-for]="menu">
+                    <!-- <button mat-icon-button [mat-menu-trigger-for]="menu">
                         <mat-icon>person_outline </mat-icon>
-                    </button>
-                    <mat-menu #menu="matMenu">
-  
+                    </button> -->
+                    <!-- <mat-menu #menu="matMenu">
+
                         <button mat-menu-item routerLinkActive="list-item-active" routerLink='/login' > Log In </button>
                         <button mat-menu-item  routerLinkActive="list-item-active" routerLink='/register' > Register </button>
                         <button mat-menu-item  routerLinkActive="list-item-active" routerLink='/login' > Sign out </button>
-                        
-                    </mat-menu>
+
+                    </mat-menu> -->
                 </li>
             </ul>
         </div>
     </mat-nav-list>
-    </mat-toolbar-row> 
+    </mat-toolbar-row>
 </mat-toolbar>
