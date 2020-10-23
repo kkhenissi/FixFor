@@ -30,7 +30,9 @@
           <button *ngIf="prd.productLoked == false" mat-flat-button style="width: 100%; margin-bottom: 0px;" (click)="redirectToSaler(prd)">Buy</button>
         </mat-card-actions> -->
         <mat-card-actions>
-          <app-lock-to-buy-ecom></app-lock-to-buy-ecom>
+          <app-lock-to-buy-ecom [count]="cart[prd.id]?.count || 0"
+                                (updateCount)="onAddProduct($event, prd)">
+          </app-lock-to-buy-ecom>
         </mat-card-actions>
 
       </mat-card-content>

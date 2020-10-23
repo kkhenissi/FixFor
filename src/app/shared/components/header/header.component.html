@@ -19,7 +19,7 @@
                 <li>
                   <div right>
                     <button aria-label="Cart" mat-icon-button>
-                      <mat-icon [matBadge]="cart.cartTotal" matBadgeColor="accent"  matBadgePosition="before">shopping_cart</mat-icon>
+                      <mat-icon [matBadge]="cart.cartTotal" matBadgeColor="accent"  matBadgePosition="after">shopping_cart</mat-icon>
                     </button>
                   </div>
 
@@ -28,16 +28,16 @@
                     </button> -->
                 </li>
                 <li>
-                    <!-- <button mat-icon-button [mat-menu-trigger-for]="menu">
+                    <button mat-icon-button [mat-menu-trigger-for]="menu">
                         <mat-icon>person_outline </mat-icon>
-                    </button> -->
-                    <!-- <mat-menu #menu="matMenu">
+                    </button>
+                    <mat-menu #menu="matMenu">
 
                         <button mat-menu-item routerLinkActive="list-item-active" routerLink='/login' > Log In </button>
                         <button mat-menu-item  routerLinkActive="list-item-active" routerLink='/register' > Register </button>
                         <button mat-menu-item  routerLinkActive="list-item-active" routerLink='/login' > Sign out </button>
 
-                    </mat-menu> -->
+                    </mat-menu>
                 </li>
             </ul>
         </div>

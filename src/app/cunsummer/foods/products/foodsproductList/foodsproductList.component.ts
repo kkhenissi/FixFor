@@ -64,6 +64,8 @@ export class FoodsProductListComponent implements OnInit, AfterViewInit, OnDestr
   }
 
   onAddProduct(count, product) {
+    console.log('==========count==========>>', count)
+    console.log('=========product==========>>', product)
     this.cartService.addToCart(count, product);
   }
   redirectToSaler(prd) {
