@@ -27,4 +27,7 @@ export class CartComponent implements OnInit {
     product.count = $event.value;
     this.cartService.addToCart($event.value, product);
   }
+  closeModal() {
+
+  }
 }

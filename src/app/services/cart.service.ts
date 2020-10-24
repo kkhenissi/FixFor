@@ -18,7 +18,6 @@ export class CartService {
     console.log('++++++++$event.value++++>', count);
     if (count === 0) {
       console.log('tes its vaue is 000', product);
-      delete this.cart[product._id];
       this.cart = {
         ...this.cart,
          [product._id]: {
@@ -26,6 +25,7 @@ export class CartService {
         count,
          }
         };
+        delete this.cart[product._id];
       } else {
       this.cart = {
       ...this.cart,

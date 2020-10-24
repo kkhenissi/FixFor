@@ -1,11 +1,13 @@
 <ng-container *ngIf="(cart$ | async) as cart">
-  <h1 mat-dialog-title>Cart</h1>
+  <h1 mat-dialog-title style="text-align: center;">You Commande</h1>
+  <mat-divider></mat-divider>
+  <mat-divider></mat-divider>
   <div mat-dialog-content>
     <mat-list>
       <mat-list-item *ngFor="let product of getValues(cart)">
         <h4 mat-line>{{ product.designation }}</h4>
-        <p mat-line>{{ product.currentPrice | currency }}</p>
-         <mat-form-field class="count">
+        <p fxFlex="20%" mat-line>{{ product.price | currency: 'EUR':'symbol':undefined:'fr-FR' }}</p>
+         <mat-form-field class="count" fxFlex="15%">
            <mat-select
                   [value]="product.count"
                   (selectionChange)="onSelectionChange($event, product)">
@@ -15,15 +17,26 @@
                        </mat-option>
             </mat-select>
           </mat-form-field>
-                      {{ product.count * product.currentPrice | currency }}
+          <div fxFlex="15%">
+
+          </div>
+          <div fxFlex="20%">
+            {{ product.count * product.price | currency: 'EUR':'symbol':undefined:'fr-FR' }}
+          </div>
+          <mat-divider></mat-divider>
+
       </mat-list-item>
       <mat-divider></mat-divider>
-      <h3 mat-subheader>
+      <h3 mat-subheader flex style="justify-content: flex-end">
               Sub Total:&nbsp;&nbsp;&nbsp; <b>{{ cart | subTotal | currency: 'EUR':'symbol':undefined:'fr-FR' }}</b>
       </h3>
     </mat-list>
     <div class="container">
+      <div class="button-row" >
+        <button fxFlex="50%" mat-raised-button color="warn" type="button" (click)="closeModal()">Cancel</button>
+        <button fxFlex="50%" mat-raised-button color="primary" type="submit" >Send</button>
 
+      </div>
     </div>
  </div>
 </ng-container>
