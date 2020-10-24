@@ -46,6 +46,7 @@ export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
                   this.router.navigate(['/login']);
               }
             }
+            this.router.navigate(['/login']);
          });
   }
 

@@ -30,9 +30,16 @@ export class HeaderComponent implements OnInit {
   }
 
   openCart(): void {
-    this.dialog.open(CartComponent,
+    const dialogRef = this.dialog.open(CartComponent,
       { width: '500px',
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`ooooo>>Dialog result: ${result}`);
+    });
+  }
+  onSignOut() {
+    localStorage.setItem('token', null);
   }
 
 }

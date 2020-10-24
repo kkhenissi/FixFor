@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
@@ -9,7 +10,8 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
 
   cart$;
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService,
+              private authService: AuthService) {
      this.cart$ = this.cartService.cart$;
   }
 
@@ -27,7 +29,8 @@ export class CartComponent implements OnInit {
     product.count = $event.value;
     this.cartService.addToCart($event.value, product);
   }
-  closeModal() {
-
+  sendOrder() {
+    console.log( '*******>>', this.authService.currentUser);
+    console.log( '*******>>', this.cartService.cart);
   }
 }

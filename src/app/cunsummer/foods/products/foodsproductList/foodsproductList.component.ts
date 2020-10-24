@@ -55,11 +55,12 @@ export class FoodsProductListComponent implements OnInit, AfterViewInit, OnDestr
 
          //  this.titleService.setTitle(`${this.sharedService.playTitle}`);
          }, err => {
-            if (err instanceof HttpErrorResponse ) {
-              if (err.status === 401) {
-                  this.router.navigate(['/login']);
-              }
+          if (err instanceof HttpErrorResponse) {
+            if (err.status === 401) {
+
             }
+            this.router.navigate(['/login']);
+          }
          });
   }
 
