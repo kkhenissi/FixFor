@@ -17,15 +17,15 @@ export class FoodsProductService {
       id: new FormControl(null),
       designation : new FormControl('', Validators.required),
       description : new FormControl('', Validators.required),
-      category: new FormControl('', Validators.required),
+  //    category: new FormControl('', Validators.required),
       imageUrl : new FormControl('', [Validators.required]),
-      logoSaler : new FormControl('', [Validators.required]),
-      linkProduct : new FormControl('', Validators.required),
-      productSold : new FormControl(0, Validators.required),
-      productLocked : new FormControl(false),
-      initialPrice: new FormControl(0),
-      currentPrice: new FormControl(0),
-      saledate: new FormControl(''),
+  //    logoSaler : new FormControl('', [Validators.required]),
+  //    linkProduct : new FormControl('', Validators.required),
+  //    productSold : new FormControl(0, Validators.required),
+  //    productLocked : new FormControl(false),
+      price: new FormControl(0),
+  //    currentPrice: new FormControl(0),
+  //    saledate: new FormControl(''),
     //  dateOfSale: new FormControl('')
    });
 
@@ -34,15 +34,15 @@ export class FoodsProductService {
       id: null,
       designation : '',
       description : '',
-      category: '',
+    //  category: '',
       imageUrl : '',
-      logoSaler : '',
-      linkProduct : '',
-      productSold : 0,
-      productLocked : false,
-      initialPrice: 0,
-      currentPrice: 0,
-      saledate: '',
+      // logoSaler : '',
+      // linkProduct : '',
+      // productSold : 0,
+      // productLocked : false,
+      price: 0,
+    //  currentPrice: 0,
+    //  saledate: '',
     //  dateOfSale: ''
 
     })
@@ -59,9 +59,8 @@ export class FoodsProductService {
   }
 
   saveProduct(product: FoodProduct): void {
-    console.log("zzzzzzzzzzzzzzzzzzzzzzz",product)
-    this.http.post<FoodProduct>(`${environment.baseUrl}/foodproducts/`, product).subscribe((data) => {
-
+    this.http.post<FoodProduct>(`${environment.springBaseUrl}/fooditems/`, product).subscribe((data) => {
+   // this.http.post<FoodProduct>(`${environment.baseUrl}/foodproducts/`, product).subscribe((data) => {
     });
   }
   // saveUser(user: any): Observable<Product> {

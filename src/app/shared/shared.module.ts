@@ -9,11 +9,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { UploadFileComponent } from './components/upload-file/upload-file.component';
 import { FixgameComponent } from './fixgame/fixgame.component';
 import { SubTotalPipe } from './sub-total.pipe';
 import { AreaComponent } from './widgets/area/area.component';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
+
 
 
 
@@ -29,6 +31,7 @@ import { PieComponent } from './widgets/pie/pie.component';
     NotFoundComponent,
     FixgameComponent,
     SubTotalPipe,
+    UploadFileComponent,
   ],
   imports: [
     CommonModule,
@@ -55,7 +58,8 @@ import { PieComponent } from './widgets/pie/pie.component';
     CardComponent,
     PieComponent,
     NotFoundComponent,
-    SubTotalPipe
+    SubTotalPipe,
+    UploadFileComponent
 
   ],
   entryComponents: [CartComponent]
