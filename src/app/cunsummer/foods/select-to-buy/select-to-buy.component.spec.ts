@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { SelectToBuyComponentCuns } from './select-to-buy.component';
 
-import { ProductListComponent } from './productList.component';
 
-describe('ProductComponent', () => {
-  let component: ProductListComponent;
-  let fixture: ComponentFixture<ProductListComponent>;
+describe('SelectToBuyComponent', () => {
+  let component: SelectToBuyComponentCuns;
+  let fixture: ComponentFixture<SelectToBuyComponentCuns>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductListComponent ]
+      declarations: [ SelectToBuyComponentCuns ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductListComponent);
+    fixture = TestBed.createComponent(SelectToBuyComponentCuns);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

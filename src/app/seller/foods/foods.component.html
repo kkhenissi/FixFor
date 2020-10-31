@@ -1,3 +1,64 @@
-<div class="container">
-  <app-add-food></app-add-food>
+
+  <mat-toolbar style="min-height: 80px !important; height: 40px !important;">
+          <span class="fill-remaining-space"></span>
+          <span>Manage your items</span>
+          <span class="fill-remaining-space"></span>
+  </mat-toolbar>
+<mat-divider></mat-divider>
+
+
+<div *ngIf="foodsProduct" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
+  <mat-card class="example-card"   *ngFor="let prd of foodsProduct  ; let i = index">
+
+      <!-- [disabled]="!isAdmin && (element.ownerId!==currentAccount.id)"   product-card-->
+
+      <mat-card-header class="container">
+
+        <mat-card-title  class="fill">{{prd.designation}}</mat-card-title>
+        <mat-card-subtitle class="container">{{ prd.price}} €</mat-card-subtitle>
+
+      </mat-card-header>
+      <!-- <img mat-card-image [src]="prd.imageUrl"> -->
+      <img mat-card-image src="{{this.host + '/foodPhoto/'+prd._id}}">
+
+<div>
+    <button class="example-margin" mat-raised-button>Edit</button>
+    <button [disabled]="envente.checked? 'true': 'false'" class="example-margin" mat-raised-button (click)="onUpdateFoodProduct(prd)">Update</button>
+    <button [disabled]="envente.checked? 'true': 'false'" class="example-margin" mat-raised-button (click)="deleteFoodProduct(prd)">Delete</button>
 </div>
+      <mat-card>
+        <mat-card-content>
+
+          <!-- <mat-slide-toggle [(ngModel)]="isChecked">Slide Toggle Checked: {{isChecked}}</mat-slide-toggle> -->
+          <section class="example-section">
+            <mat-slide-toggle #envente
+                class="example-margin"
+                [color]="color"
+                [checked]="!prd.active? checked: ''"
+                [disabled]="disabled"
+                (click)="changeStatus(envente, prd)">
+                <h4 class="example-h6">En Vente</h4>
+            </mat-slide-toggle>
+          </section>
+        </mat-card-content>
+      </mat-card>
+
+
+
+  </mat-card>
+  <mat-card class="example-card">
+    <mat-card-header class="container">
+      <mat-card-title  class="fill">Add New Item</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="container">
+      <button mat-button (click)="addFoodProduct()"><mat-icon class="mat-18">add</mat-icon> </button>
+    </mat-card-content>
+    <mat-card-footer class="container">
+
+    </mat-card-footer>
+
+  </mat-card>
+
+
+</div>
+

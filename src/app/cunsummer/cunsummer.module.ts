@@ -10,7 +10,9 @@ import { EcomrcComponent } from './ecomrc/ecomrc.component';
 import { ProductListComponent } from './ecomrc/products/productList/productList.component';
 import { FoodsComponent } from './foods/foods.component';
 import { FoodsProductListComponent } from './foods/products/foodsproductList/foodsproductList.component';
-import { LockToBuyComponentCuns } from './lock-to-buy/lock-to-buy.component';
+import { SelectToBuyComponentCuns } from './foods/select-to-buy/select-to-buy.component';
+
+
 
 
 
@@ -21,7 +23,7 @@ import { LockToBuyComponentCuns } from './lock-to-buy/lock-to-buy.component';
                  DashboardComponent,
                  ProductListComponent,
                  FoodsProductListComponent,
-                 LockToBuyComponentCuns,
+                 SelectToBuyComponentCuns,
                  CartComponent],
   imports: [
     CommonModule,

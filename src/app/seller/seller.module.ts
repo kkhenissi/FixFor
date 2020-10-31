@@ -8,6 +8,7 @@ import { EcomrcComponent } from './ecomrc/ecomrc.component';
 import { FixgameComponent } from './fixgame/fixgame.component';
 import { AddFoodComponent } from './foods/add-food/add-food.component';
 import { FoodsComponent } from './foods/foods.component';
+import { ToggleAdminComponent } from './foods/toggle-admin/toggle-admin.component';
 import { SellerRoutingModule } from './seller-routing.module';
 
 
@@ -15,7 +16,7 @@ import { SellerRoutingModule } from './seller-routing.module';
 
 
 @NgModule({
-  declarations: [DashboadComponent, FixgameComponent, FoodsComponent, EcomrcComponent, AddFoodComponent],
+  declarations: [DashboadComponent, FixgameComponent, FoodsComponent, EcomrcComponent, AddFoodComponent, ToggleAdminComponent],
   imports: [
     CommonModule,
     SellerRoutingModule,

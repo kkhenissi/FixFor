@@ -8,13 +8,13 @@ import { RegisterComponent } from 'src/app/defaultModule/register/register.compo
 import { MaterialModule } from 'src/app/material/material.module';
 import { DashboardService } from 'src/app/modules/dashboard.service';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
-import { PostsComponent } from 'src/app/modules/posts/posts.component';
-import { AddProductComponent } from 'src/app/modules/products/addProduct/addProduct.component';
-import { ProductListComponent } from 'src/app/modules/products/productList/productList.component';
+// import { AddProductComponent } from 'src/app/modules/products/addProduct/addProduct.component';
+// import { ProductListComponent } from 'src/app/modules/products/productList/productList.component';
 import { SearchCreteriaComponent } from 'src/app/modules/searchCreteria/searchCreteria.component';
 import { SellerModule } from 'src/app/seller/seller.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { DefaultComponent } from './default.component';
+
 
 
 
@@ -34,11 +34,11 @@ import { DefaultComponent } from './default.component';
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    PostsComponent,
-    ProductListComponent,
+
+  //  ProductListComponent,
     LoginComponent,
     RegisterComponent,
-    AddProductComponent,
+  //  AddProductComponent,
     SearchCreteriaComponent,
   ],
 

@@ -2,7 +2,13 @@
   <mat-card>
     <mat-toolbar style="min-height: 40px !important; height: 40px !important;">
       <span class="fill-remaining-space"></span>
-      <span>Add new Food's Item</span>
+      <div *ngIf="choixmenu==='Add' else updateMode">
+        <span>Add new Food's Item</span>
+      </div>
+      <ng-template #updateMode>
+        <span>Update Item</span>
+      </ng-template>
+
       <span class="fill-remaining-space"></span>
     </mat-toolbar>
 
@@ -14,56 +20,50 @@
               <input formControlName="designation" matInput placeholder="Designation*">
               <mat-error *ngIf="foodsproductService.form.controls['designation'].errors?.required">this field is required !</mat-error>
             </mat-form-field>
-            <!-- <mat-form-field>
-              <input formControlName="category" matInput placeholder="Category*">
-            </mat-form-field> -->
-            <mat-form-field>
-              <input formControlName="description" matInput placeholder="Description*">
-            </mat-form-field>
-            <!-- <div fxLayoutAlign="space-between"> -->
-              <mat-form-field>
-                <input  formControlName="price" matInput placeholder="Price">
-              </mat-form-field>
-            <!-- </div> -->
 
+            <mat-form-field>
+              <!-- <input formControlName="description" matInput placeholder="Description*"> -->
+              <textarea
+                    matInput
+                    placeholder="description*"
+                    name="description"
+                    formControlName="description"
+            ></textarea>
+            </mat-form-field>
+
+
+              <mat-form-field>
+                <input
+                    matInput
+                    type="number"
+                    placeholder="price"
+                    name="price"
+                    formControlName="price"
+
+               />
+              </mat-form-field>
          </div>
      </mat-grid-tile>
      <mat-grid-tile>
         <div class="controles-container">
 
-            <!-- <mat-form-field>
-              <input formControlName="saledate" matInput placeholder="saledate">
-            </mat-form-field> -->
-            <!-- <mat-form-field>
-              <input formControlName="dateOfSale" matInput placeholder="dateOfSale">
-            </mat-form-field> -->
-
-              <!-- <input formControlName="imageUrl" matInput placeholder="image Url"> -->
               <div class="container" style="width:600px">
-                  <app-upload-file></app-upload-file>
-
+                  <!-- <app-upload-file></app-upload-file> -->
+                 <!-- <h3>Choose image</h3> -->
+                 <input style="display: none;"
+                        type="file"
+                        accept="image/*"
+                        (change)="onSelectedFile($event)"
+                        #fileInput>
+                  <!-- <img [src]="imageUrl" height="200" *ngIf="imageUrl"> -->
+                  <img mat-card-image *ngIf="selectedFoodProduct" height="100" width="100" src="{{this.host + '/foodPhoto/'+this.selectedFoodProduct._id}}">
+              </div>
+              <div>
+                <button type="button" (click)="fileInput.click()">Pick Image</button>
+                <button type="button" (click)="onUpload()">Upload</button>
               </div>
 
 
-
-            <!-- <mat-form-field>
-              <input formControlName="logoSaler" matInput placeholder="your logo">
-            </mat-form-field>
-            <mat-form-field>
-              <input formControlName="linkProduct" matInput placeholder="your logo">
-            </mat-form-field>
-            <mat-form-field>
-              <input formControlName="productSold" matInput placeholder="Designation">
-            </mat-form-field>
-
-            <mat-form-field>
-              <input formControlName="currentPrice" matInput placeholder="Designation">
-            </mat-form-field> -->
-
-          <!-- <div class="button-row">
-              <mat-checkbox  class="checkbox-dim" style="margin-left: 20px;" formControlName="productLocked" matInput>Locked</mat-checkbox>
-              <mat-checkbox  style="margin-left: 15px;" formControlName="productSold" matInput>Sold</mat-checkbox>
-          </div> -->
             <div class="button-row">
               <button mat-raised-button color="primary" type="submit" [disabled]="foodsproductService.form.invalid">Add</button>
               <button  mat-raised-button color="warn" type="button" (click)="onClear()">Clear</button>

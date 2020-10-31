@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-lock-to-buy-ecom',
-  templateUrl: './lock-to-buy.component.html',
-  styleUrls: ['./lock-to-buy.component.scss']
+  selector: 'app-select-to-buy',
+  templateUrl: './select-to-buy.component.html',
+  styleUrls: ['./select-to-buy.component.scss']
 })
-export class LockToBuyComponentCuns implements OnInit {
+export class SelectToBuyComponentCuns implements OnInit {
   @Input() count = 0;
   @Output() updateCount = new EventEmitter();
   constructor() { }

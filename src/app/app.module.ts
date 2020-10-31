@@ -19,7 +19,7 @@ registerLocaleData(localeFr, 'fr');
 @NgModule({
   declarations: [
     AppComponent,
-  //   LockToBuyComponent
+  //   SelectToBuyComponent
   ],
 
   imports: [

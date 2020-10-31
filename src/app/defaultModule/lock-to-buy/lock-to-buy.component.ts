@@ -5,7 +5,7 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './lock-to-buy.component.html',
   styleUrls: ['./lock-to-buy.component.scss']
 })
-export class LockToBuyComponent implements OnInit {
+export class SelectToBuyComponent implements OnInit {
   @Input() count = 0;
   constructor() { }
 

@@ -26,11 +26,12 @@
           <!-- <button mat-flat-button class="btn-card" (click)="redirectToSaler()">Buy me</button> -->
 
           <!-- <a  *ngIf="prd.productLoked == false" target="_blank" href={{prd.linkProduct}}> Buy me</a> -->
-          <!-- <h4 *ngIf="prd.productLoked == true" class="blink_me"> Locked  by one  ather user !!</h4>
+        <!-- <mat-card-actions>
+          <h4 *ngIf="prd.productLoked == true" class="blink_me"> Locked  by one  ather user !!</h4>
           <button *ngIf="prd.productLoked == false" mat-flat-button style="width: 100%; margin-bottom: 0px;" (click)="redirectToSaler(prd)">Buy</button>
         </mat-card-actions> -->
         <mat-card-actions>
-          <app-lock-to-buy-ecom></app-lock-to-buy-ecom>
+          <button class="buy-btn"  *ngIf="prd.productLoked == false" mat-stroked-button  (click)="redirectToSaler(prd)">Lock to Buy</button>
         </mat-card-actions>
 
       </mat-card-content>

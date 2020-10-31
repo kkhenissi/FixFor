@@ -8,11 +8,12 @@ import { FoodProduct } from 'src/app/models/FoodProductModel';
 import { CartService } from 'src/app/services/cart.service';
 import { FoodsProductService } from 'src/app/services/foodsproduct.service';
 import { SharedService } from 'src/app/shared/shared.service';
+import { environment } from 'src/environments/environment';
 
 
 
 @Component({
-  selector: 'app-product',
+  selector: 'app-product-food',
   templateUrl: './foodsproductList.component.html',
   styleUrls: ['./foodsproductList.component.scss']
 })
@@ -21,6 +22,7 @@ export class FoodsProductListComponent implements OnInit, AfterViewInit, OnDestr
   products$: Observable<FoodProduct[]>;
   cart$: Observable<any>;
   cart;
+  host;
   private mediaSub: Subscription;
   constructor(
     private foodProductService: FoodsProductService,
@@ -35,6 +37,7 @@ export class FoodsProductListComponent implements OnInit, AfterViewInit, OnDestr
 
   ngOnInit(): void {
       this.getProducts();
+      this.host = environment.springBaseUrl;
   }
 
   ngAfterViewInit(): void {

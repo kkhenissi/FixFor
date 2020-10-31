@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { FoodProduct } from 'src/app/models/FoodProductModel';
 import { environment } from 'src/environments/environment';
 
@@ -10,6 +10,8 @@ import { environment } from 'src/environments/environment';
 })
 export class FoodsProductService {
   products: Observable<FoodProduct[]>;
+  public currentFoodProduct$ = new BehaviorSubject<FoodProduct>(null) as Observable<FoodProduct>;
+
 
   constructor(private http: HttpClient) { }
 
@@ -17,16 +19,10 @@ export class FoodsProductService {
       id: new FormControl(null),
       designation : new FormControl('', Validators.required),
       description : new FormControl('', Validators.required),
-  //    category: new FormControl('', Validators.required),
-      imageUrl : new FormControl('', [Validators.required]),
-  //    logoSaler : new FormControl('', [Validators.required]),
-  //    linkProduct : new FormControl('', Validators.required),
-  //    productSold : new FormControl(0, Validators.required),
-  //    productLocked : new FormControl(false),
+      imageUrl : new FormControl(''),
+      active : new FormControl(false),
       price: new FormControl(0),
-  //    currentPrice: new FormControl(0),
-  //    saledate: new FormControl(''),
-    //  dateOfSale: new FormControl('')
+
    });
 
    initializeFormGroup() {
@@ -34,16 +30,9 @@ export class FoodsProductService {
       id: null,
       designation : '',
       description : '',
-    //  category: '',
+      active: false,
       imageUrl : '',
-      // logoSaler : '',
-      // linkProduct : '',
-      // productSold : 0,
-      // productLocked : false,
       price: 0,
-    //  currentPrice: 0,
-    //  saledate: '',
-    //  dateOfSale: ''
 
     })
   }
@@ -58,13 +47,28 @@ export class FoodsProductService {
     return this.http.get<FoodProduct>(`${environment.baseUrl}/foodproducts/` + key);
   }
 
-  saveProduct(product: FoodProduct): void {
-    this.http.post<FoodProduct>(`${environment.springBaseUrl}/fooditems/`, product).subscribe((data) => {
+  saveProduct(formData: FormData): Observable<FoodProduct> {
+   return this.http.post<FoodProduct>(`${environment.springBaseUrl}/fooditems/`, formData);
+
+
+      // .subscribe((data) => {
+      // this.http.post<FoodProduct>(`${environment.baseUrl}/foodproducts/`, product).subscribe((data) => {
+      //   });
+  }
+
+  updateProduct(product: any): void {
+    console.log('ggggggggg', product._id);
+    const key = product._id;
+    this.http.put<FoodProduct>(`${environment.springBaseUrl}/fooditems/` + key , product).subscribe((data) => {
    // this.http.post<FoodProduct>(`${environment.baseUrl}/foodproducts/`, product).subscribe((data) => {
     });
   }
-  // saveUser(user: any): Observable<Product> {
-  //   return this.http.post<Product>(`${environment.baseUrl}/userss/`, user);
-  // }
+  deleteProduct(key: string): void {
+    console.log('=======================> key', `${environment.springBaseUrl}/foodproducts/` + key)
+    this.http.delete(`${environment.springBaseUrl}/foodproducts/` + key)
+             .subscribe(res  => {
+               console.log(res);
+             });
+  }
 
   }

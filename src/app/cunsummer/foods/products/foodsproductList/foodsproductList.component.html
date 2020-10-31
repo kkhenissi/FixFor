@@ -1,7 +1,7 @@
 <!-- <app-searchCreteria></app-searchCreteria> -->
 <div *ngIf="products$" fxLayout="row wrap" fxLayoutGap="32px" fxLayoutAlign="flex-start">
   <mat-card class="example-card"   *ngFor="let prd of products$ | async ; let i = index">
-    <div>
+
       <!-- [disabled]="!isAdmin && (element.ownerId!==currentAccount.id)"   product-card-->
 
       <mat-card-header class="container">
@@ -10,7 +10,8 @@
         <mat-card-subtitle class="container">{{ prd.price}} €</mat-card-subtitle>
 
       </mat-card-header>
-      <img mat-card-image [src]="prd.imageUrl">
+      <!-- <img mat-card-image [src]="prd.imageUrl"> -->
+      <img mat-card-image src="{{this.host + '/foodPhoto/'+prd._id}}">
       <mat-card-content>
         <p>
           {{ prd.description }}
@@ -30,13 +31,15 @@
           <button *ngIf="prd.productLoked == false" mat-flat-button style="width: 100%; margin-bottom: 0px;" (click)="redirectToSaler(prd)">Buy</button>
         </mat-card-actions> -->
         <mat-card-actions>
-          <app-lock-to-buy-ecom [count]="cart[prd.id]?.count || 0"
+
+          <app-select-to-buy [count]="cart[prd.id]?.count || 0"
                                 (updateCount)="onAddProduct($event, prd)">
-          </app-lock-to-buy-ecom>
+          </app-select-to-buy>
         </mat-card-actions>
 
+
       </mat-card-content>
-    </div>
+
 
   </mat-card>
 
