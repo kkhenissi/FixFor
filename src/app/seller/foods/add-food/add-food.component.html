@@ -55,12 +55,12 @@
                         accept="image/*"
                         (change)="onSelectedFile($event)"
                         #fileInput>
-                  <!-- <img [src]="imageUrl" height="200" *ngIf="imageUrl"> -->
-                  <img mat-card-image *ngIf="selectedFoodProduct" height="100" width="100" src="{{this.host + '/foodPhoto/'+this.selectedFoodProduct._id}}">
+                  <img [src]="imageUrl" height="200" *ngIf="imageUrl">
+                  <!-- <img mat-card-image *ngIf="selectedFoodProduct" height="100" width="100" [src]="imageUrl"> -->
               </div>
               <div>
                 <button type="button" (click)="fileInput.click()">Pick Image</button>
-                <button type="button" (click)="onUpload()">Upload</button>
+                <!-- <button type="button" (click)="onUploadFoofPhoto()">Upload</button> -->
               </div>
 
 

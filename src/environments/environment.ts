@@ -5,7 +5,9 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:5000/api/v1',
-  springBaseUrl: 'http://localhost:8086'
+  springBaseUrl: 'http://localhost:8086',
+  spring2BaseUrl: 'http://localhost:8088',
+
 };
 
 /*

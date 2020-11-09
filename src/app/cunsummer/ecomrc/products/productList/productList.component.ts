@@ -5,8 +5,10 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { environment } from 'src/environments/environment';
 import { Product } from '../../../../models/ProductModel';
 import { ProductService } from '../../../../services/product.service';
+
 
 
 @Component({
@@ -17,6 +19,7 @@ import { ProductService } from '../../../../services/product.service';
 export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
   products: Product[] = [];
   private mediaSub: Subscription;
+  host: string;
   constructor(
     private productService: ProductService,
     private titleService: Title,
@@ -27,6 +30,7 @@ export class ProductListComponent implements OnInit, AfterViewInit, OnDestroy {
 
   ngOnInit(): void {
       this.getProducts();
+      this.host = environment.spring2BaseUrl;
   }
 
   ngAfterViewInit(): void {

@@ -10,7 +10,8 @@
         <mat-card-subtitle class="currentprice">{{ prd.currentPrice }} €</mat-card-subtitle>
         <p style="color: red; font-weight: bold;"> -{{(prd.currentPrice/prd.initialPrice) | percent: "2.2-2"}}</p>
       </mat-card-header>
-      <img mat-card-image [src]="prd.imageUrl">
+       <img mat-card-image [src]="prd.imageUrl">
+      <!-- <img mat-card-image src="{{this.host + '/ecomProductPhoto/'+prd._id}}"> -->
       <mat-card-content>
         <p>
           {{ prd.description }}

@@ -37,15 +37,16 @@ constructor(private http: HttpClient) { }
     designation : '',
     description : '',
     category: '',
-    imageUrl : '',
+
     logoSaler : '',
     linkProduct : '',
-    productSold : 0,
+    productSold : false,
     productLocked : false,
     initialPrice: 0,
     currentPrice: 0,
+    active: false,
     saledate: '',
-  //  dateOfSale: ''
+    dateOfSale: ''
 
   })
 }
@@ -53,7 +54,7 @@ constructor(private http: HttpClient) { }
 
 
 getProducts(): Observable<Product[]> {
-      return this.http.get<Product[]>(`${environment.baseUrl}/products/`);
+          return this.http.get<Product[]>(`${environment.baseUrl}/products/`);
 }
 
 getProduct(key: string): Observable<Product> {

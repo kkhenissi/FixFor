@@ -1,11 +1,11 @@
 <!-- <div fxLayoutAlign="center" fxFlexFill class="main-div">
 
-   
+
         <span class="anchor" id="formLogin"></span>
-  
+
         <mat-card fxFlex="30>">
           <mat-toolbar color>
-            
+
           </mat-toolbar>
           <div class="card-header">
             <h3 class="mb-0">Login</h3>
@@ -23,14 +23,29 @@
               <button type="button" (click)="loginUser()" class="btn btn-success float-right">Login</button>
             </form>
           </div>
-         
+
         </mat-card>
         /form card login
   </div> -->
 
   <div fxLayoutAlign="center center" fxFlexFill class="main-div">
-    <mat-card fxFlex="25">
+
+<!-- <div>Your favorite season is: {{favoriteSeason}}</div> -->
+    <mat-card fxFlex="50">
       <mat-toolbar color= "primary">Log In</mat-toolbar>
+      <mat-card-header style="justify-content: center;">
+        <!-- <label id="example-radio-group-label">Pick your gender user</label> -->
+
+              <mat-radio-group
+                aria-labelledby="example-radio-group-label"
+
+                [(ngModel)]="currentGender">
+                <mat-radio-button class="container"  *ngFor="let gender of usersGender" [value]="gender">
+                  {{gender}}
+                </mat-radio-button>
+            </mat-radio-group>
+
+      </mat-card-header>
       <form fxLayoutAlign="stretch" fxLayout="column" class="login-form">
         <mat-form-field>
           <input matInput placeholder="your Email" class="form-control rounded-0" [(ngModel)]="loginUserData.email" name="email" required>
