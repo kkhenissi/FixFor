@@ -37,10 +37,13 @@ export class AddFoodComponent implements OnInit {
     //   this.selectedFoodProduct = data;
     //   console.log('hhhhh==>', this.selectedFoodProduct);
     // })
-    this.foodsproductService.form.get(['designation']).setValue(this.selectedFoodProduct.designation);
-    this.foodsproductService.form.get(['description']).setValue(this.selectedFoodProduct.description);
-    this.foodsproductService.form.get(['price']).setValue(this.selectedFoodProduct.price);
-    this.foodsproductService.form.get(['imageUrl']).setValue(this.selectedFoodProduct.imageUrl);
+    if (this.choixmenu !== 'Add') {
+      this.foodsproductService.form.get(['designation']).setValue(this.selectedFoodProduct.designation);
+      this.foodsproductService.form.get(['description']).setValue(this.selectedFoodProduct.description);
+      this.foodsproductService.form.get(['price']).setValue(this.selectedFoodProduct.price);
+      this.foodsproductService.form.get(['imageUrl']).setValue(this.selectedFoodProduct.imageUrl);
+    }
+
   }
   onClear() {
     this.foodsproductService.form.reset();
@@ -59,7 +62,7 @@ export class AddFoodComponent implements OnInit {
      this.addData();
      setTimeout(() => {
       this.onUploadFoofPhoto(this.namePhotoSelectedFoodProduct);
-     }, 3000);
+     }, 2000);
 
    } else {
     this.updateData(this.selectedFoodProduct._id);
@@ -68,9 +71,9 @@ export class AddFoodComponent implements OnInit {
         this.willUpdateImage = false;
     }
    }
-
-
-   }
+    this.dialogRef.close();
+   // this.foodsproductService.form.reset();
+  }
 
    addData() {
      const formData = new FormData();
@@ -79,9 +82,13 @@ export class AddFoodComponent implements OnInit {
      formData.append('file', this.selectedFile);
      this.foodsproductService.saveProduct(formData)
        .subscribe( data => {
-         console.log(data);
-         this.namePhotoSelectedFoodProduct = data.id;
-         console.log('this.namePhotoSelectedFoodProduct ==>', this.namePhotoSelectedFoodProduct)
+         console.log('Data ===================>', data);
+           console.log('Daaaaaaaaaaaaaaaaaaata ===>', data)
+        //  setTimeout(() => {
+           this.namePhotoSelectedFoodProduct = data.id;
+           console.log('this.namePhotoSelectedFoodProduct ==>', this.namePhotoSelectedFoodProduct);
+        // }, 5000)
+
        });
 
 
@@ -97,7 +104,10 @@ export class AddFoodComponent implements OnInit {
     this.foodsproductService.updateProduct(formData)
     .subscribe( data => {
       console.log(data);
-    //  this.namePhotoSelectedFoodProduct=data.id;
+  //   setTimeout(() => {
+        this.namePhotoSelectedFoodProduct = data.id;
+  //    }, 5000)
+
    //   console.log('this.namePhotoSelectedFoodProduct ==>', this.namePhotoSelectedFoodProduct)
     });
 

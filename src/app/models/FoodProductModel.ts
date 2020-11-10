@@ -1,5 +1,6 @@
 export class FoodProduct {
-    id: string;
+    _id?: string;
+    id?: string;
     designation = '';
     description = '';
     imageUrl = '';

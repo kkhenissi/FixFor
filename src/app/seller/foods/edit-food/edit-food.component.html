@@ -1,13 +1,11 @@
-<form [formGroup]="foodsproductService.form" class="normal-form" (ngSubmit)="onSubmit()">
+<form [formGroup]="foodsproductService.form" class="normal-form">
   <mat-card>
     <mat-toolbar style="min-height: 40px !important; height: 40px !important;">
       <span class="fill-remaining-space"></span>
-      <div *ngIf="choixmenu==='Add' else updateMode">
-        <span>Add new Food's Item</span>
+      <div>
+        <span> Item Details</span>
       </div>
-      <ng-template #updateMode>
-        <span>Update Item</span>
-      </ng-template>
+
 
       <span class="fill-remaining-space"></span>
     </mat-toolbar>
@@ -45,30 +43,7 @@
          </div>
      </mat-grid-tile>
      <mat-grid-tile>
-        <div class="controles-container">
 
-              <div class="container" style="width:600px">
-                  <!-- <app-upload-file></app-upload-file> -->
-                 <!-- <h3>Choose image</h3> -->
-                 <input style="display: none;"
-                        type="file"
-                        accept="image/*"
-                        (change)="onSelectedFile($event)"
-                        #fileInput>
-                  <img [src]="imageUrl" height="200" *ngIf="imageUrl">
-                  <!-- <img mat-card-image *ngIf="selectedFoodProduct" height="100" width="100" [src]="imageUrl"> -->
-              </div>
-              <div>
-                <button type="button" (click)="fileInput.click()">Pick Image</button>
-                <!-- <button type="button" (click)="onUploadFoofPhoto()">Upload</button> -->
-              </div>
-
-
-            <div class="button-row">
-              <button mat-raised-button color="primary" type="submit" [disabled]="foodsproductService.form.invalid">Save</button>
-              <button  mat-raised-button color="warn" type="button" (click)="onClear()">Clear</button>
-            </div>
-        </div>
 
       </mat-grid-tile>
     </mat-grid-list>

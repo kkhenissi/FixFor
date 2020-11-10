@@ -91,18 +91,15 @@ export class FoodsProductService {
     console.log('ggggggggg producthh  key ==>', producthh);
     const headersOption = new HttpHeaders().set('Content-Type', 'application/json');
 
-   return  this.http.put<FoodProduct>(`${environment.springBaseUrl}/fooditems/` + key , formData.get('product'), {headers: headersOption});
-   alert('ok')
-   //.subscribe((data) => {
-   // this.http.post<FoodProduct>(`${environment.baseUrl}/foodproducts/`, product).subscribe((data) => {
-   // });
+    return  this.http.put<FoodProduct>(`${environment.springBaseUrl}/fooditems/` + key , formData.get('product'), {headers: headersOption});
+
   }
-  deleteProduct(key: string): void {
-    console.log('=======================> key', `${environment.springBaseUrl}/foodproducts/` + key)
-    this.http.delete(`${environment.springBaseUrl}/foodproducts/` + key)
-             .subscribe(res  => {
-               console.log(res);
-             });
+  deleteProduct(key: string): Observable<boolean> {
+    console.log('=======================> key', `${environment.springBaseUrl}/foodproducts/` + key);
+    return this.http.delete<boolean>(`${environment.springBaseUrl}/fooditems/` + key);
+            //  .subscribe(res  => {
+            //    console.log(res);
+            //  });
   }
 
   }

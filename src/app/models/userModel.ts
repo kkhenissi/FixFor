@@ -1,16 +1,13 @@
 export class UserModel {
-    id: number;
-    email = '';
-    name = '';
-    lastName = '';
-    imageProfile = '';
-    phoneNumber = '';
-    
-    status = false;
-    fideBox = 0;
-
-   
-    signeUpdate: Date = new Date();
+    id: string;
+    email: '';
+    name?: '';
+    lastName?: '';
+    imageProfile?: '';
+    phoneNumber?: '';
+    status?: false;
+    fideBox?: 0;
+    signeUpDate: Date = new Date();
 
 
 

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MaterialModule } from '../material/material.module';
+import { SellerComponent } from '../seller/seller/seller.component';
 import { SharedModule } from '../shared/shared.module';
 import { CartComponent } from './cart/cart.component';
 import { CunsummerRoutingModule } from './cunsummer-routing.module';
@@ -18,6 +19,7 @@ import { SelectToBuyComponentCuns } from './foods/select-to-buy/select-to-buy.co
 
 @NgModule({
   declarations: [CunsummerComponent,
+                 SellerComponent,
                  EcomrcComponent,
                  FoodsComponent,
                  DashboardComponent,

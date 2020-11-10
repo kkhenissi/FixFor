@@ -5,6 +5,7 @@ import { FoodProduct } from 'src/app/models/FoodProductModel';
 import { FoodsProductService } from 'src/app/services/foodsproduct.service';
 import { environment } from 'src/environments/environment';
 import { AddFoodComponent } from './add-food/add-food.component';
+import { EditFoodComponent } from './edit-food/edit-food.component';
 
 @Component({
   selector: 'app-foods',
@@ -46,7 +47,7 @@ export class FoodsComponent implements OnInit, AfterViewChecked {
 
   handeleSuccessfulResponse(response) {
 
-    this.foodsProduct = response['products'];
+    this.foodsProduct = response.products;
     console.log(this.foodsProduct);
    // this.cdRef.detectChanges();
   }
@@ -62,12 +63,19 @@ export class FoodsComponent implements OnInit, AfterViewChecked {
 
     matDialogRef.afterClosed().subscribe(result => {
       console.log(`ooooo>>Dialog result: ${result}`);
+      setTimeout(() => {
+        this.ngOnInit();
+      }, 3000);
+
     });
 
   }
   deleteFoodProduct(product) {
     console.log('===> product', product);
-    this.foodsProductService.deleteProduct(product._id);
+    this.foodsProductService.deleteProduct(product._id).subscribe((resp) => {
+               console.log('What in resp after delete ==> ', resp);
+               this.ngOnInit();
+    });
   }
   changeStatus(envente, product) {
 
@@ -79,7 +87,7 @@ export class FoodsComponent implements OnInit, AfterViewChecked {
     formData.append('productId', product._id);
     // formData.append('file', this.selectedFile);
     // this.foodsproductService.updateProduct(formData)
-    console.log(' what is in product ==>', product._id);
+    console.log(' what is in productId ==>', product._id);
     if (envente._checked) {
       product.active = false;
     } else {
@@ -87,11 +95,11 @@ export class FoodsComponent implements OnInit, AfterViewChecked {
     }
     formData.append('product', JSON.stringify(product));
     this.foodsProductService.updateProduct(formData).subscribe((data) => {
-       console.log('ddddddddddddddddaaaatttaaa============>', data)
-    })
-   // this.cdRef.detectChanges();
+       console.log('ddddddddddddddddaaaatttaaa============>', data);
+    });
   }
-  onUpdateFoodProduct(p) {
+// tslint:disable-next-line: typedef
+onUpdateFoodProduct(p) {
     this.selectedFoodProduct = p;
     const matDialogRef = this.dialog.open(AddFoodComponent,
       { width: '500px',
@@ -101,9 +109,22 @@ export class FoodsComponent implements OnInit, AfterViewChecked {
 
     matDialogRef.afterClosed().subscribe(result => {
       console.log(`ooooo>>Dialog result: ${result}`);
+      this.ngOnInit();
+    });
+  }
+
+  // tslint:disable-next-line: typedef
+  onEditFoodProduct(p) {
+    this.selectedFoodProduct = p;
+    const matDialogRef = this.dialog.open(EditFoodComponent,
+      { width: '500px',
+      data: {choixmenu: 'Update',
+      item: this.selectedFoodProduct}
     });
 
-
+    matDialogRef.afterClosed().subscribe(result => {
+      console.log(`ooooo>>Dialog result: ${result}`);
+    });
   }
 }
 

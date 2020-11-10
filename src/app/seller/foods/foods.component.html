@@ -22,7 +22,7 @@
       <img mat-card-image src="{{this.host + '/foodPhoto/'+prd._id}}">
 
 <div>
-    <button class="example-margin" mat-raised-button>Edit</button>
+    <button class="example-margin" mat-raised-button (click)="onEditFoodProduct(prd)">Edit</button>
     <button [disabled]="envente.checked? 'true': 'false'" class="example-margin" mat-raised-button (click)="onUpdateFoodProduct(prd)">Update</button>
     <button [disabled]="envente.checked? 'true': 'false'" class="example-margin" mat-raised-button (click)="deleteFoodProduct(prd)">Delete</button>
 </div>
