@@ -44,6 +44,7 @@ export class FoodsProductService {
 
   getProducts(): Observable<FoodProduct[]> {
         return this.http.get<FoodProduct[]>(`${environment.baseUrl}/foodproducts/`);
+
   }
 
   getProduct(key: string): Observable<FoodProduct> {

@@ -50,8 +50,9 @@ export class FoodsProductListComponent implements OnInit, AfterViewInit, OnDestr
 
            this.products = data['products'];
            console.log('============== data =>', this.products);
+           let activeProduct = this.products.filter(prd => prd['active'] === true);
            if (this.products !== undefined) {
-            this.products$ = of(this.products);
+            this.products$ = of(activeProduct);
            }
 
 
